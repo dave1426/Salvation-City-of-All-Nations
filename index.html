@@ -14,7 +14,6 @@
     <meta property="og:url" content="https://salvation-city-rx3t.vercel.app">
     <meta name="theme-color" content="#581C87">
 
-    <!-- Twitter Card tags for full social media preview support -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Salvation City Of All Nations">
     <meta name="twitter:description" content="Experience Redemption, Restoration & Repositioning. Join us at 3 Redcliffe Close, Parklands, Cape Town">
@@ -36,63 +35,73 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Simple fade slideshow */
         .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 2s ease-in-out; }
         .slide.active { opacity: 1; }
     </style>
 </head>
 <body class="bg-churchBlue text-white font-sans antialiased selection:bg-churchRed selection:text-white">
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-churchBlue/90 backdrop-blur-md border-b border-purple-800/40">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-wider uppercase flex items-center gap-3">
-                <img src="IMG-20260818-WA0010.jpg" alt="Salvation City Logo" class="h-12 w-12 rounded-full object-cover border-2 border-churchRed shadow-md shadow-red-500/20">
-                <span class="text-xs sm:text-sm font-extrabold tracking-tight">SALVATION CITY OF ALL NATIONS</span>
+    <!-- Header with Welcoming Stacked Title & Streamlined Responsive Menu -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-churchBlue/95 backdrop-blur-md border-b border-purple-800/40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo & Stacked Title -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <img src="IMG-20260818-WA0010.jpg" alt="Salvation City Logo" class="h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover border-2 border-churchRed shadow-md shadow-red-500/20 group-hover:scale-105 transition">
+                <div class="flex flex-col">
+                    <span class="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-white leading-tight">Salvation City</span>
+                    <span class="text-[10px] sm:text-xs text-purple-300 font-medium tracking-widest uppercase">Of All Nations</span>
+                </div>
             </a>
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
-                <a href="#vision" class="hover:text-white transition">Our Vision</a>
-                <a href="#services" class="hover:text-white transition">Services</a>
-                <a href="#next-steps" class="hover:text-white transition">Next Steps</a>
-                <a href="#testimonies" class="hover:text-white transition">Testimonies</a>
+
+            <!-- Desktop Nav (Home, Submit Prayer Request, Join Us, FAQ) -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
+                <a href="#" class="hover:text-white transition">Home</a>
+                <a href="#prayer-request" class="hover:text-white transition">Submit Prayer Request</a>
+                <a href="#services" class="hover:text-white transition">Join Us</a>
                 <a href="#faq" class="hover:text-white transition">FAQ</a>
-                <a href="#prayer-request" class="hover:text-white transition">Prayer Request</a>
-                <a href="#map-section" class="hover:text-white transition">Location</a>
-                <a href="https://youtube.com/@pchimezirim?si=gbOfIgxONkMWaX01" target="_blank" class="flex items-center gap-2 text-red-500 hover:text-red-400 transition">
-                    <i class="fa-brands fa-youtube text-lg"></i> YouTube
-                </a>
             </nav>
+
+            <!-- Actions & Mobile Button -->
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/27658718996" target="_blank" class="hidden md:inline-flex bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-green-600/20">
-                    <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp
+                <a href="https://wa.me/27658718996" target="_blank" class="hidden sm:inline-flex bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition shadow-md shadow-green-600/20 items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"><span>WhatsApp</span></i>
                 </a>
-                <button id="menu-btn" class="md:hidden text-2xl text-gray-300 focus:outline-none">
+                <button id="menu-btn" class="md:hidden text-2xl text-gray-200 focus:outline-none p-1">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-purple-950/95 border-b border-purple-900 px-6 py-4 flex-col gap-4">
-            <a href="#vision" class="mobile-link text-gray-300 hover:text-white">Our Vision</a>
-            <a href="#services" class="mobile-link text-gray-300 hover:text-white">Services</a>
-            <a href="#next-steps" class="mobile-link text-gray-300 hover:text-white">Next Steps</a>
-            <a href="#testimonies" class="mobile-link text-gray-300 hover:text-white">Testimonies</a>
-            <a href="#faq" class="mobile-link text-gray-300 hover:text-white">FAQ</a>
-            <a href="#prayer-request" class="mobile-link text-gray-300 hover:text-white">Prayer Request</a>
-            <a href="#map-section" class="mobile-link text-gray-300 hover:text-white">Location</a>
-            <a href="https://youtube.com/@pchimezirim?si=gbOfIgxONkMWaX01" target="_blank" class="mobile-link flex items-center gap-2 text-red-500 font-semibold">
-                <i class="fa-brands fa-youtube"></i> YouTube
+
+        <!-- Mobile Drawer Menu (Home, Submit Prayer Request, Join Us, FAQ) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-purple-950/98 border-b border-purple-900 px-6 py-5 flex-col gap-4 shadow-2xl">
+            <a href="#" class="mobile-link text-gray-200 hover:text-white text-base font-medium py-1 border-b border-purple-900/40 flex items-center justify-between">
+                <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-purple-400"></i>
             </a>
-            <a href="https://wa.me/27658718996" target="_blank" class="mobile-link bg-green-600 text-center text-white py-2.5 rounded-full font-semibold shadow-md shadow-green-600/20">
-                <i class="fa-brands fa-whatsapp mr-2"></i> +27 65 871 8996
+            <a href="#prayer-request" class="mobile-link text-gray-200 hover:text-white text-base font-medium py-1 border-b border-purple-900/40 flex items-center justify-between">
+                <span>Submit Prayer Request</span> <i class="fa-solid fa-chevron-right text-xs text-purple-400"></i>
             </a>
+            <a href="#services" class="mobile-link text-gray-200 hover:text-white text-base font-medium py-1 border-b border-purple-900/40 flex items-center justify-between">
+                <span>Join Us</span> <i class="fa-solid fa-chevron-right text-xs text-purple-400"></i>
+            </a>
+            <a href="#faq" class="mobile-link text-gray-200 hover:text-white text-base font-medium py-1 flex items-center justify-between">
+                <span>FAQ</span> <i class="fa-solid fa-chevron-right text-xs text-purple-400"></i>
+            </a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="https://wa.me/27658718996" target="_blank" class="mobile-link bg-green-600 text-center text-white py-2.5 rounded-xl font-semibold shadow-md shadow-green-600/20 text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                </a>
+                <a href="https://youtube.com/@pchimezirim?si=gbOfIgxONkMWaX01" target="_blank" class="mobile-link bg-red-600/90 text-center text-white py-2.5 rounded-xl font-semibold shadow-md shadow-red-600/20 text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-youtube text-lg"></i> Watch Sermons
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+    <!-- Hero Section with Repositioned, Welcoming Headline -->
+    <section class="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="IMG-20260818-WA0011.jpg" class="slide active w-full h-full object-cover opacity-45">
-            <img src="IMG-20260818-WA0012.jpg" class="slide w-full h-full object-cover opacity-45">
+            <img src="IMG-20260818-WA0011.jpg" class="slide active w-full h-full object-cover opacity-40">
+            <img src="IMG-20260818-WA0012.jpg" class="slide w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-gradient-to-b from-churchBlue/90 via-purple-950/60 to-churchBlue"></div>
         </div>
 
@@ -102,14 +111,20 @@
             <span class="inline-flex items-center gap-2 bg-churchRed/20 border border-churchRed/40 text-churchRed px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-md shadow-lg shadow-red-500/10">
                 <i class="fa-solid fa-dove"></i> WELCOME HOME TO SALVATION CITY OF ALL NATIONS
             </span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-lg">
-                Experience <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-churchRed">Redemption</span>, Restoration & Repositioning
+            
+            <!-- Repositioned & Welcoming Headline Format -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-normal tracking-tight mb-6 leading-relaxed drop-shadow-lg">
+                Come & Experience <br class="hidden sm:inline">
+                <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-churchRed underline decoration-churchRed/50 decoration-2 underline-offset-8">Redemption</span>, <br class="sm:hidden">
+                <span class="font-bold italic text-purple-200">Restoration</span> &amp; <br class="sm:hidden">
+                <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-churchRed via-purple-300 to-white">Repositioning</span>
             </h1>
-            <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light drop-shadow">
+
+            <p class="text-base sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light drop-shadow">
                 No matter where you've been or what you're facing, God has a fresh start for your life. You belong here in Cape Town.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#next-steps" class="w-full sm:w-auto bg-churchRed hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-red-500/30 text-center">
+                <a href="#services" class="w-full sm:w-auto bg-churchRed hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-red-500/30 text-center">
                     Plan Your Visit
                 </a>
                 <a href="#prayer-request" class="w-full sm:w-auto bg-purple-700 hover:bg-purple-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-purple-600/30 text-center border border-purple-500/40">
@@ -142,7 +157,6 @@
                 <p class="text-gray-400 text-sm">The foundational truth driving everything we do as a family of faith.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-5">
-                <!-- REDEMPTION -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 rounded-2xl overflow-hidden group hover:border-churchRed/80 hover:shadow-xl hover:shadow-red-500/10 transition flex flex-col">
                     <div class="h-44 overflow-hidden relative">
                         <img src="IMG-20260818-WA0018.jpg" alt="Redemption" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -156,7 +170,6 @@
                         <p class="text-gray-300 text-sm leading-relaxed">Finding freedom and new life through the finished work of Jesus Christ. Your past does not define your future.</p>
                     </div>
                 </div>
-                <!-- RESTORATION -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 rounded-2xl overflow-hidden group hover:border-churchRed/80 hover:shadow-xl hover:shadow-red-500/10 transition flex flex-col">
                     <div class="h-44 overflow-hidden relative">
                         <img src="IMG-20260818-WA0017.jpg" alt="Restoration" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -170,7 +183,6 @@
                         <p class="text-gray-300 text-sm leading-relaxed">Healing broken pieces, rebuilding families, and restoring peace and joy back into your everyday life.</p>
                     </div>
                 </div>
-                <!-- REPOSITIONING -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 rounded-2xl overflow-hidden group hover:border-churchRed/80 hover:shadow-xl hover:shadow-red-500/10 transition flex flex-col">
                     <div class="h-44 overflow-hidden relative">
                         <img src="IMG-20260818-WA0014.jpg" alt="Repositioning" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -188,7 +200,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section (Join Us) -->
     <section id="services" class="py-20 px-6 bg-purple-950/20 border-t border-purple-800/30">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
             <div>
@@ -242,7 +254,6 @@
                 <p class="text-gray-400 text-sm">Discover a clear pathway to connect deeply, grow in your faith, and find your God-given purpose.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-5">
-                <!-- Step 1 -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 rounded-3xl p-7 flex flex-col justify-between shadow-xl hover:border-churchRed/80 hover:shadow-red-500/10 transition">
                     <div>
                         <div class="w-12 h-12 bg-churchRed/20 border border-churchRed/40 text-churchRed rounded-2xl flex items-center justify-center text-xl font-bold mb-5 shadow-md shadow-red-500/20">
@@ -259,7 +270,6 @@
                     </a>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 rounded-3xl p-7 flex flex-col justify-between shadow-xl hover:border-churchRed/80 hover:shadow-red-500/10 transition">
                     <div>
                         <div class="w-12 h-12 bg-churchRed/20 border border-churchRed/40 text-churchRed rounded-2xl flex items-center justify-center text-xl font-bold mb-5 shadow-md shadow-red-500/20">
@@ -276,7 +286,6 @@
                     </a>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 rounded-3xl p-7 flex flex-col justify-between shadow-xl hover:border-churchRed/80 hover:shadow-red-500/10 transition">
                     <div>
                         <div class="w-12 h-12 bg-churchRed/20 border border-churchRed/40 text-churchRed rounded-2xl flex items-center justify-center text-xl font-bold mb-5 shadow-md shadow-red-500/20">
@@ -305,7 +314,6 @@
                 <p class="text-gray-400 text-sm">Read how God is bringing Redemption, Restoration, and Repositioning to families in Cape Town and beyond.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-5">
-                <!-- Testimony 1 -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 p-7 rounded-3xl flex flex-col justify-between shadow-xl relative">
                     <div class="absolute top-6 right-6 text-churchRed/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
                     <div>
@@ -324,7 +332,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Testimony 2 -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 p-7 rounded-3xl flex flex-col justify-between shadow-xl relative">
                     <div class="absolute top-6 right-6 text-churchRed/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
                     <div>
@@ -343,7 +350,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Testimony 3 -->
                 <div class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 p-7 rounded-3xl flex flex-col justify-between shadow-xl relative">
                     <div class="absolute top-6 right-6 text-churchRed/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
                     <div>
@@ -380,7 +386,6 @@
                 <p class="text-gray-400 text-sm">Everything you need to know before visiting us for the first time.</p>
             </div>
             <div class="space-y-3">
-                <!-- FAQ Item 1 -->
                 <div class="bg-gradient-to-r from-purple-950/40 to-purple-900/30 border border-purple-800/40 rounded-2xl overflow-hidden transition">
                     <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
                         <span class="font-bold text-white text-sm sm:text-base">What should I wear when I visit?</span>
@@ -390,7 +395,6 @@
                         Come as you are! Whether you prefer traditional formal wear or comfortable casual clothing, you are warmly welcomed at Salvation City Of All Nations.
                     </div>
                 </div>
-                <!-- FAQ Item 2 -->
                 <div class="bg-gradient-to-r from-purple-950/40 to-purple-900/30 border border-purple-800/40 rounded-2xl overflow-hidden transition">
                     <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
                         <span class="font-bold text-white text-sm sm:text-base">Where is parking available?</span>
@@ -400,7 +404,6 @@
                         Ample and secure parking is available around 3 Redcliffe Close, Parklands, Cape Town. Our ushering team will gladly guide you upon arrival.
                     </div>
                 </div>
-                <!-- FAQ Item 3 -->
                 <div class="bg-gradient-to-r from-purple-950/40 to-purple-900/30 border border-purple-800/40 rounded-2xl overflow-hidden transition">
                     <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
                         <span class="font-bold text-white text-sm sm:text-base">What happens during the Sunday Celebration Service?</span>
@@ -410,7 +413,6 @@
                         Our services feature uplifting praise and worship, dynamic prayer, and life-transforming, practical biblical teaching focused on Redemption, Restoration, and Repositioning. Services typically run from 10:00 AM to 11:30 AM.
                     </div>
                 </div>
-                <!-- FAQ Item 4 -->
                 <div class="bg-gradient-to-r from-purple-950/40 to-purple-900/30 border border-purple-800/40 rounded-2xl overflow-hidden transition">
                     <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center gap-4 focus:outline-none">
                         <span class="font-bold text-white text-sm sm:text-base">How can I join the online Daily Prayer?</span>
@@ -427,7 +429,6 @@
     <!-- Submit Your Prayer Request Card & Form Section -->
     <section id="prayer-request" class="py-20 px-6 bg-purple-950/20 border-t border-purple-800/30">
         <div class="max-w-xl mx-auto">
-            <!-- Initial Card View -->
             <div id="prayer-card" class="bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 p-8 sm:p-10 rounded-3xl shadow-2xl text-center">
                 <div class="w-16 h-16 bg-churchRed/20 border border-churchRed/40 text-churchRed rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-5 shadow-lg shadow-red-500/20">
                     <i class="fa-solid fa-hands-praying"></i>
@@ -439,7 +440,6 @@
                 </button>
             </div>
 
-            <!-- Detailed Prayer Form View (Hidden by Default) -->
             <div id="prayer-form-container" class="hidden bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 p-7 sm:p-10 rounded-3xl shadow-2xl">
                 <div class="flex items-center justify-between mb-6">
                     <div>
@@ -514,7 +514,7 @@
         </div>
     </section>
 
-    <!-- Map & Location Section (Moved to Extreme End before Connect/Footer) -->
+    <!-- Map & Location Section -->
     <section id="map-section" class="py-20 px-6 bg-churchBlue border-t border-purple-800/30">
         <div class="max-w-7xl mx-auto bg-gradient-to-b from-purple-950/30 to-purple-950/60 border border-purple-800/40 rounded-3xl p-6 sm:p-10 shadow-xl">
             <div class="text-center max-w-xl mx-auto mb-8">
@@ -541,40 +541,6 @@
                 <a href="https://wa.me/27658718996?text=Hello,%20I%20need%20help%20with%20directions%20to%203%20Redcliffe%20Close,%20Parklands" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3.5 rounded-xl transition text-sm flex items-center justify-center gap-2 shadow-md shadow-green-600/20">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Ask for Directions on WhatsApp
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Connect / Plan Visit Form -->
-    <section id="connect" class="py-20 px-6 bg-purple-950/20 border-t border-purple-800/30">
-        <div class="max-w-xl mx-auto bg-gradient-to-b from-purple-900/30 to-purple-950/60 border border-purple-700/40 p-8 sm:p-10 rounded-3xl shadow-2xl">
-            <div class="text-center mb-6">
-                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Plan Your Visit</h2>
-                <p class="text-gray-300 text-xs sm:text-sm">Fill out the form or <a href="https://wa.me/27658718996" target="_blank" class="text-green-400 font-semibold hover:underline">WhatsApp us at +27 65 871 8996</a></p>
-            </div>
-            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">Full Name</label>
-                    <input type="text" required class="w-full bg-churchBlue border border-purple-800/60 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-churchRed transition" placeholder="John Doe">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">Email Address</label>
-                    <input type="email" required class="w-full bg-churchBlue border border-purple-800/60 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-churchRed transition" placeholder="john@example.com">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">Which service will you attend?</label>
-                    <select class="w-full bg-churchBlue border border-purple-800/60 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-churchRed transition">
-                        <option class="bg-churchBlue">Sunday Service (10:00 AM – 11:30 AM)</option>
-                        <option class="bg-churchBlue">Daily Evening Service (9:00 PM – 10:00 PM)</option>
-                        <option class="bg-churchBlue">Online Stream</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full bg-churchRed hover:bg-red-600 text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-red-500/20 mt-2 text-sm">
-                    Submit & Connect
-                </button>
-            </form>
-            <div id="success-msg" class="hidden mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-center rounded-xl text-xs sm:text-sm font-medium">
-                Thank you! We look forward to welcoming you at 3 Redcliffe Close.
             </div>
         </div>
     </section>
@@ -606,7 +572,6 @@
             });
         });
 
-        // FAQ Toggle Function
         function toggleFaq(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('i');
@@ -614,15 +579,6 @@
             icon.classList.toggle('rotate-180');
         }
 
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            event.target.reset();
-            const successMsg = document.getElementById('success-msg');
-            successMsg.classList.remove('hidden');
-            setTimeout(() => { successMsg.classList.add('hidden'); }, 5000);
-        }
-
-        // Prayer Request Form Interactions
         function showPrayerForm() {
             document.getElementById('prayer-card').classList.add('hidden');
             document.getElementById('prayer-form-container').classList.remove('hidden');
@@ -652,7 +608,6 @@
             }, 6000);
         }
 
-        // SLIDESHOW for Hero Background 011 <-> 012
         const slides = document.querySelectorAll('.slide');
         let current = 0;
         setInterval(() => {
