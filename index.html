@@ -136,14 +136,24 @@
         </div>
     </section>
 
-    <!-- Scripture -->
-    <section id="scripture" class="py-14 px-6 bg-purple-950/40 border-y border-purple-800/30 shadow-inner">
-        <div class="max-w-4xl mx-auto text-center">
+    <!-- Scripture Section with Background Video (Cross in Beam of Light) -->
+    <section id="scripture" class="relative py-20 px-6 overflow-hidden border-y border-purple-800/30 shadow-inner">
+        <!-- Background Video & Dark Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-35">
+                <!-- Replace the URL below with your cross/beam light MP4 video link or file name -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-light-rays-shining-through-trees-41842-large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-churchBlue/90 via-purple-950/80 to-churchBlue/90"></div>
+        </div>
+
+        <!-- Scripture Content -->
+        <div class="max-w-4xl mx-auto text-center relative z-10">
             <div class="text-churchRed text-2xl mb-3"><i class="fa-solid fa-cross"></i></div>
-            <blockquote class="text-xl sm:text-2xl font-serif italic text-gray-100 mb-4 leading-relaxed">
+            <blockquote class="text-xl sm:text-2xl font-serif italic text-gray-100 mb-4 leading-relaxed drop-shadow-md">
                 "In that day shall this song be sung in the land of Judah; We have a strong city; salvation will God appoint for walls and bulwarks."
             </blockquote>
-            <span class="text-churchRed font-semibold tracking-widest uppercase text-xs">Isaiah 26:1 KJV</span>
+            <span class="text-churchRed font-semibold tracking-widest uppercase text-xs drop-shadow">Isaiah 26:1 KJV</span>
         </div>
     </section>
 
