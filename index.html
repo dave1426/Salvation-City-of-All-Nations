@@ -37,6 +37,15 @@
     <style>
         .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 2s ease-in-out; }
         .slide.active { opacity: 1; }
+        
+        /* Glowing Light Beam Animation */
+        @keyframes lightBeamPulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+        .light-beam-glow {
+            animation: lightBeamPulse 6s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-churchBlue text-white font-sans antialiased selection:bg-churchRed selection:text-white">
@@ -136,20 +145,22 @@
         </div>
     </section>
 
-    <!-- Scripture Section with Background Video (Cross in Beam of Light) -->
-    <section id="scripture" class="relative py-20 px-6 overflow-hidden border-y border-purple-800/30 shadow-inner">
-        <!-- Background Video & Dark Gradient Overlay -->
-        <div class="absolute inset-0 z-0">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-35">
-                <!-- Replace the URL below with your cross/beam light MP4 video link or file name -->
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-light-rays-shining-through-trees-41842-large.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-churchBlue/90 via-purple-950/80 to-churchBlue/90"></div>
+    <!-- Scripture Section with Glowing Light Beam Background -->
+    <section id="scripture" class="relative py-24 px-6 overflow-hidden border-y border-purple-800/30 shadow-inner bg-churchBlue">
+        <!-- Radiant Light Beam & Atmospheric Glow Background -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
+            <!-- Center vertical glowing beam of light -->
+            <div class="absolute w-72 sm:w-96 h-full bg-gradient-to-b from-amber-200/30 via-purple-500/20 to-transparent blur-3xl light-beam-glow"></div>
+            <!-- Radial ambient glow -->
+            <div class="absolute w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl"></div>
         </div>
+        
+        <!-- Dark overlay to ensure crisp contrast -->
+        <div class="absolute inset-0 bg-churchBlue/60 backdrop-blur-[1px] z-1"></div>
 
         <!-- Scripture Content -->
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="text-churchRed text-2xl mb-3"><i class="fa-solid fa-cross"></i></div>
+            <div class="text-churchRed text-3xl mb-3 animate-pulse"><i class="fa-solid fa-cross"></i></div>
             <blockquote class="text-xl sm:text-2xl font-serif italic text-gray-100 mb-4 leading-relaxed drop-shadow-md">
                 "In that day shall this song be sung in the land of Judah; We have a strong city; salvation will God appoint for walls and bulwarks."
             </blockquote>
