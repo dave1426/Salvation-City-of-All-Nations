@@ -502,12 +502,12 @@
                     </div>
 
                     <button type="submit" class="w-full bg-churchRed hover:bg-red-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-red-500/20 mt-3 text-sm">
-                        Submit Prayer Request
+                        Submit Prayer Request to WhatsApp
                     </button>
                 </form>
 
                 <div id="prayer-success-msg" class="hidden mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-center rounded-xl text-xs sm:text-sm font-medium">
-                    Thank you! Your prayer request has been submitted successfully. Our team will stand with you in faith.
+                    Redirecting to WhatsApp with your prayer request...
                 </div>
             </div>
         </div>
@@ -596,15 +596,44 @@
 
         function handlePrayerSubmit(event) {
             event.preventDefault();
-            event.target.reset();
-            document.getElementById('char-count').textContent = `0 characters`;
 
+            // Collect form field values
+            const firstName = document.getElementById('p-firstname').value.trim();
+            const lastName = document.getElementById('p-lastname').value.trim();
+            const age = document.getElementById('p-age').value.trim();
+            const gender = document.getElementById('p-gender').value;
+            const country = document.getElementById('p-country').value.trim();
+            const whatsapp = document.getElementById('p-whatsapp').value.trim();
+            const prayerRequest = document.getElementById('p-request').value.trim();
+            const joinDailyPrayer = document.getElementById('p-daily-prayer').checked ? "Yes" : "No";
+
+            // Format message for WhatsApp
+            const message = `*🙏 NEW PRAYER REQUEST - SALVATION CITY*\n\n` +
+                            `*First Name:* ${firstName}\n` +
+                            `*Last Name:* ${lastName}\n` +
+                            `*Age:* ${age}\n` +
+                            `*Gender:* ${gender}\n` +
+                            `*Country:* ${country}\n` +
+                            `*WhatsApp:* ${whatsapp}\n` +
+                            `*Join Daily Prayer:* ${joinDailyPrayer}\n\n` +
+                            `*Prayer Request:* \n${prayerRequest}`;
+
+            // Encode message for URL use
+            const encodedMessage = encodeURIComponent(message);
+            const churchWhatsAppNumber = "27658718996";
+
+            // Show success alert/message briefly
             const successMsg = document.getElementById('prayer-success-msg');
             successMsg.classList.remove('hidden');
-            setTimeout(() => { 
+
+            // Open WhatsApp with the pre-filled message after a short moment
+            setTimeout(() => {
+                window.open(`https://wa.me/${churchWhatsAppNumber}?text=${encodedMessage}`, '_blank');
+                event.target.reset();
+                document.getElementById('char-count').textContent = `0 characters`;
                 successMsg.classList.add('hidden');
                 hidePrayerForm();
-            }, 6000);
+            }, 1000);
         }
 
         const slides = document.querySelectorAll('.slide');
