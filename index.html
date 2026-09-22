@@ -145,18 +145,16 @@
         </div>
     </section>
 
-    <!-- Scripture Section with Glowing Light Beam Background -->
-    <section id="scripture" class="relative py-24 px-6 overflow-hidden border-y border-purple-800/30 shadow-inner bg-churchBlue">
-        <!-- Radiant Light Beam & Atmospheric Glow Background -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
-            <!-- Center vertical glowing beam of light -->
-            <div class="absolute w-72 sm:w-96 h-full bg-gradient-to-b from-amber-200/30 via-purple-500/20 to-transparent blur-3xl light-beam-glow"></div>
-            <!-- Radial ambient glow -->
-            <div class="absolute w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl"></div>
+    <!-- Scripture Section with 3 Crosses Background Video -->
+    <section id="scripture" class="relative py-28 px-6 overflow-hidden border-y border-purple-800/30 shadow-inner bg-churchBlue">
+        <!-- Background Video of the 3 Crosses -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-50 scale-105">
+                <source src="3 crosses live.mp4" type="video/mp4">
+            </video>
+            <!-- Dark overlay with gradient/blur for readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-churchBlue/80 via-churchBlue/70 to-churchBlue/80 backdrop-blur-[2px]"></div>
         </div>
-        
-        <!-- Dark overlay to ensure crisp contrast -->
-        <div class="absolute inset-0 bg-churchBlue/60 backdrop-blur-[1px] z-1"></div>
 
         <!-- Scripture Content -->
         <div class="max-w-4xl mx-auto text-center relative z-10">
@@ -722,4 +720,3 @@
     </script>
 </body>
 </html>
-
